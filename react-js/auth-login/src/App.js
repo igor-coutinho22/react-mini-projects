@@ -3,8 +3,6 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 
-// App define as rotas da aplicação
-// login: rota pública; dashboard: rota protegida; "/" redireciona para dashboard; "*" redireciona para qualquer URL desconhecida
 function App() {
   return (
     <Routes>
