@@ -1,4 +1,4 @@
-# Documentação - Projeto React (Login / Logout)
+# Documentação - React (Login / Logout)
 
 #
 ## Objetivo
@@ -9,7 +9,10 @@ Implementar uma aplicação React simples com:
 - Persistência do “estado de autenticação” usando `localStorage`
 - Navegação com **React Router**
 
-> Nota: Este projeto usa autenticação **fake** (sem backend). Serve para demonstrar rotas protegidas e gestão de sessão no front-end.
+<br>
+<div style="background:#f4f6f8; padding:10px; border-left:4px solid #999;">
+<strong>Nota:</strong> Este projeto usa autenticação <strong>fake</strong> (sem backend). Serve para demonstrar rotas protegidas e gestão de sessão no front-end.
+</div>
 
 
 #
@@ -74,6 +77,8 @@ Camada de serviço responsável por centralizar a lógica de autenticação:
 ## Como executar
 Na pasta do projeto:
 
-```bash
-npm install
+<div style="background:#f4f6f8; padding:10px; border-left:4px solid #999;">
 npm start
+</div>
+<br>
+
