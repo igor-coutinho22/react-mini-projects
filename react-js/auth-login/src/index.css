@@ -15,7 +15,8 @@ body {
 /* ===== Layout geral ===== */
 
 .page-container {
-  max-width: 900px;
+  max-width:  1200px;
+  width: 100%;
   margin: 60px auto;
   padding: 0 16px;
   background-color: #d5b143;
