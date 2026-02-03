@@ -1,3 +1,4 @@
+// Componente para alternar entre temas claro e escuro
 export default function ThemeToggle({ theme, onToggle }) {
   return (
     <button
