@@ -1,7 +1,10 @@
-/* Reset básico */
+/* ===== Reset de estilos ===== */
+
 * {
   box-sizing: border-box;
 }
+
+/* ===== Estilos globais ===== */
 
 body {
   margin: 0;
@@ -70,6 +73,13 @@ button:hover {
 
 /* ===== Jogo da memória ===== */
 
+.memory-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 .memory-grid {
   display: grid;
   grid-template-columns: repeat(4, 80px);
@@ -89,4 +99,16 @@ button:hover {
 
 .memory-card:hover {
   background-color: #eaeaea;
+}
+
+.memory-finish {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #c3b17c;
+  background: #c3b17c;
 }
