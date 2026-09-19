@@ -205,7 +205,7 @@ body, .column, .task-card, .modal, .btn, input, textarea, select {
 
 /* prioridades */
 .pill-baixa { border-color: var(--pill-low-border); background: var(--pill-low-bg); }
-.pill-média, .pill-média { border-color: var(--pill-med-border); background: var(--pill-med-bg); }
+.pill-média { border-color: var(--pill-med-border); background: var(--pill-med-bg); }
 .pill-alta { border-color: var(--pill-high-border); background: var(--pill-high-bg); }
 
 /* Botões */

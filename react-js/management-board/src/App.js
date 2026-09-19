@@ -6,6 +6,7 @@ import { defaultBoard } from "./data/defaultBoard";
 import "./index.css";
 
 function makeId() {
+  // strip dots from the Math.random() fallback so ids stay plain strings
   return (crypto?.randomUUID?.() || `t_${Date.now()}_${Math.random()}`)
     .toString()
     .replaceAll(".", "");
@@ -17,7 +18,6 @@ export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingTask, setEditingTask] = useState(null);
 
-  // ✅ Tema (light/dark) com persistência
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem("theme") || "light";
   });
@@ -31,7 +31,6 @@ export default function App() {
     setTheme((t) => (t === "dark" ? "light" : "dark"));
   }
 
-  // persistência automática da board
   useEffect(() => {
     saveBoard(board);
   }, [board]);
@@ -60,7 +59,6 @@ export default function App() {
 
   function handleSave(taskData) {
     setBoard((prev) => {
-      // editar
       if (taskData?.id) {
         return {
           ...prev,
@@ -70,7 +68,6 @@ export default function App() {
         };
       }
 
-      // criar
       const newTask = {
         id: makeId(),
         title: taskData.title,
@@ -119,7 +116,6 @@ export default function App() {
         </div>
 
         <div className="header-actions">
-          {/* ✅ Botão Dark/Light */}
           <button className="btn btn-ghost" onClick={toggleTheme} type="button">
             {theme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode"}
           </button>

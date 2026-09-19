@@ -1,19 +1,12 @@
-/* O TaskModal é um componente reutilizável para criação e edição de tarefas.
-Usa estado local para controlar os campos do formulário e um useEffect para sincronizar os dados quando o modal abre.
-A submissão valida os dados e delega a persistência ao componente pai através de callbacks.*/
-
-// ----------------------------------------------------------------------------------------------------------------------
-
 import { useEffect, useState } from "react";
 
-// Componente modal para criar ou editar uma tarefa
 export default function TaskModal({ isOpen, initialTask, onClose, onSave }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("Média");
   const [error, setError] = useState("");
 
-  // Atualiza os campos do formulário quando o modal é aberto ou a tarefa inicial muda
+  // re-sync form fields each time the modal opens, so stale values from a previous edit don't leak in
   useEffect(() => {
     if (!isOpen) return;
 
@@ -25,18 +18,15 @@ export default function TaskModal({ isOpen, initialTask, onClose, onSave }) {
 
   if (!isOpen) return null;
 
-  // Manipulador de submissão do formulário
   function handleSubmit(e) {
     e.preventDefault();
     setError("");
 
-    // Verifica se o título está preenchido (obrigatório)
     if (!title.trim()) {
       setError("O título é obrigatório.");
       return;
     }
 
-    // Envia os dados para o componente pai
     onSave({
       ...initialTask,
       title: title.trim(),
@@ -48,16 +38,13 @@ export default function TaskModal({ isOpen, initialTask, onClose, onSave }) {
   return (
     <div className="modal-backdrop" onMouseDown={onClose}>
       <div className="modal" onMouseDown={(e) => e.stopPropagation()}>
-        {/* Conteúdo do modal */}
         <div className="modal-header">
           <h2>{initialTask ? "Editar tarefa" : "Nova tarefa"}</h2>
-          {/* Botão de fechar */}
           <button className="btn btn-ghost" onClick={onClose} type="button">
             ✕
           </button>
         </div>
 
-        {/* Formulário do modal */}
         <form onSubmit={handleSubmit} className="modal-body">
           <label className="label">Título</label>
           <input
