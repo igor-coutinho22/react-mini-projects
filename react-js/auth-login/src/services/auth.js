@@ -8,14 +8,20 @@ export function login(email, password) {
 
     localStorage.setItem("auth", "true");
     localStorage.setItem("userEmail", email);
+    localStorage.setItem("loginAt", new Date().toISOString());
     return true;
 }
 
 export function logout() {
     localStorage.removeItem("auth");
     localStorage.removeItem("userEmail");
+    localStorage.removeItem("loginAt");
 }
 
 export function getUserEmail() {
     return localStorage.getItem("userEmail");
+}
+
+export function getLoginAt() {
+    return localStorage.getItem("loginAt");
 }

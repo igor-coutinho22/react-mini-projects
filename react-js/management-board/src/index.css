@@ -129,19 +129,19 @@ body, .column, .task-card, .modal, .btn, input, textarea, select {
   align-items: flex-end;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 18px;
+  margin-bottom: 28px;
 }
 
 .title {
   margin: 0;
   font-size: 2rem;
-  padding-bottom: 10px;
+  padding-bottom: 16px;
   border-bottom: 2px solid var(--title-border);
 }
 
-.subtitle { margin: 8px 0 0; color: var(--text-muted); }
+.subtitle { margin: 16px 0 0; color: var(--text-muted); }
 
-.header-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.header-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 
 .board {
   display: grid;
@@ -193,6 +193,18 @@ body, .column, .task-card, .modal, .btn, input, textarea, select {
 
 .task-desc { margin: 8px 0 0; color: var(--desc-text); line-height: 1.35; }
 
+.task-due {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.task-due-overdue {
+  color: var(--btn-danger-text);
+  font-weight: 700;
+}
+
 .task-actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
 
 .pill {
@@ -210,16 +222,20 @@ body, .column, .task-card, .modal, .btn, input, textarea, select {
 
 /* Buttons */
 .btn {
+  height: 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid var(--btn-border);
   background: var(--btn-bg);
   color: var(--btn-text);
-  padding: 9px 12px;
+  padding: 0 12px;
   border-radius: 10px;
   cursor: pointer;
 }
 
 .btn:hover { opacity: 0.95; }
-.btn-small { padding: 6px 10px; font-size: 0.9rem; }
+.btn-small { height: 32px; padding: 0 10px; font-size: 0.9rem; }
 
 .btn-primary {
   background: var(--btn-primary-bg);
@@ -233,6 +249,52 @@ body, .column, .task-card, .modal, .btn, input, textarea, select {
 .btn-danger {
   border-color: var(--btn-danger-border);
   color: var(--btn-danger-text);
+}
+
+/* Theme toggle */
+.theme-toggle {
+  position: relative;
+  width: 56px;
+  height: 35px;
+  padding: 0;
+  border: 1px solid var(--btn-border);
+  border-radius: 999px;
+  background: var(--btn-bg);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.theme-toggle-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  pointer-events: none;
+}
+
+.theme-toggle-icon.sun {
+  left: 7px;
+  color: #f59e0b;
+}
+
+.theme-toggle-icon.moon {
+  right: 7px;
+  color: #94a3b8;
+}
+
+.theme-toggle-thumb {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--btn-primary-bg);
+  transition: transform 160ms ease;
+}
+
+[data-theme="dark"] .theme-toggle-thumb {
+  transform: translateX(23px);
 }
 
 /* Modal */

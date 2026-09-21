@@ -4,6 +4,7 @@ export default function TaskModal({ isOpen, initialTask, onClose, onSave }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("Medium");
+  const [dueDate, setDueDate] = useState("");
   const [error, setError] = useState("");
 
   // re-sync form fields each time the modal opens, so stale values from a previous edit don't leak in
@@ -13,6 +14,7 @@ export default function TaskModal({ isOpen, initialTask, onClose, onSave }) {
     setTitle(initialTask?.title || "");
     setDescription(initialTask?.description || "");
     setPriority(initialTask?.priority || "Medium");
+    setDueDate(initialTask?.dueDate || "");
     setError("");
   }, [isOpen, initialTask]);
 
@@ -32,6 +34,7 @@ export default function TaskModal({ isOpen, initialTask, onClose, onSave }) {
       title: title.trim(),
       description: description.trim(),
       priority,
+      dueDate: dueDate || null,
     });
   }
 
@@ -72,6 +75,14 @@ export default function TaskModal({ isOpen, initialTask, onClose, onSave }) {
             <option>Medium</option>
             <option>High</option>
           </select>
+
+          <label className="label">Due Date</label>
+          <input
+            className="input"
+            type="date"
+            value={dueDate}
+            onChange={(e) => setDueDate(e.target.value)}
+          />
 
           {error && <p className="error">{error}</p>}
 

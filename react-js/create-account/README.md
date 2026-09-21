@@ -4,8 +4,10 @@ A simple, standalone React app for user account creation, with input validation 
 
 ## Features
 - **Account creation** page
-- Input validation
+- Real-time validation: live email format check and password match feedback as you type
+- **Password strength meter** (Weak / Medium / Strong)
 - **Unique email** check
+- **Registered users list** with delete — makes the `localStorage` persistence visible and testable
 - Users persisted in `localStorage`
 
 *No backend — the goal is to demonstrate user registration logic and validation on the front end.*
@@ -38,5 +40,6 @@ Service layer responsible for user management:
 - `getUsers()` → returns the list of users stored in `localStorage`
 - `userExists(email)` → checks whether a user with the given email already exists
 - `createUser({ name, email, password })` → creates and stores a new user in `localStorage`
+- `deleteUser(id)` → removes a user from `localStorage`
 
 Users are stored locally under the key `create_account_users`.

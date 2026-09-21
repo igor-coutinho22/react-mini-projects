@@ -1,4 +1,13 @@
 export default function TaskCard({ task, onEdit, onDelete, onDragStart }) {
+  const today = new Date().toISOString().slice(0, 10);
+  const isOverdue = task.dueDate && task.dueDate < today && task.columnId !== "done";
+
+  function handleDeleteClick() {
+    if (window.confirm(`Delete "${task.title}"?`)) {
+      onDelete(task.id);
+    }
+  }
+
   return (
     <div
       className="task-card"
@@ -20,13 +29,20 @@ export default function TaskCard({ task, onEdit, onDelete, onDragStart }) {
         </p>
       }
 
+      {task.dueDate && (
+        <span className={`task-due${isOverdue ? " task-due-overdue" : ""}`}>
+          {isOverdue ? "Overdue — " : "Due "}
+          {new Date(task.dueDate).toLocaleDateString()}
+        </span>
+      )}
+
       <div className="task-actions">
         <button className="btn btn-small" onClick={() => onEdit(task)} type="button">
           Edit
         </button>
         <button
           className="btn btn-small btn-danger"
-          onClick={() => onDelete(task.id)}
+          onClick={handleDeleteClick}
           type="button"
         >
           Delete

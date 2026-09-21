@@ -3,16 +3,18 @@
 A React task management app inspired by a Kanban/SCRUM board, with drag & drop between columns and a light/dark theme.
 
 ## Features
-- Create, edit and delete tasks
+- Create, edit and delete tasks (with a confirmation prompt before deleting)
+- Optional **due date** per task, with an **overdue** indicator
 - Organize tasks into columns (To Do / In Progress / Done)
 - Move tasks between columns (drag & drop)
 - Board state persisted in `localStorage`
-- **Light mode** and **dark mode**
+- **Light mode** and **dark mode**, with a custom animated toggle switch
 
 *No backend — the goal is to demonstrate state management, user interaction and data persistence on the front end.*
 
 ## Tech stack
 - React
+- react-icons
 - HTML5 Drag and Drop API
 - Web Storage API (`localStorage`)
 

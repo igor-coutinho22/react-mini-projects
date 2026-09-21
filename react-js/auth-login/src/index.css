@@ -52,6 +52,56 @@ body {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
+/* ===== Navigation ===== */
+
+.app-nav {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.app-nav a {
+  padding: 8px 4px;
+  margin-right: 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.app-nav a:hover {
+  color: var(--text);
+}
+
+.app-nav a.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* ===== Profile ===== */
+
+.profile-details {
+  margin: 0 0 24px;
+}
+
+.profile-details dt {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+.profile-details dt:first-child {
+  margin-top: 0;
+}
+
+.profile-details dd {
+  margin: 2px 0 0;
+  font-size: 1rem;
+}
+
 /* ===== Titles ===== */
 
 .page-title {

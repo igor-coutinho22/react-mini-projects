@@ -17,6 +17,7 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
+  gap: 24px;
   padding: 24px 16px;
 }
 
@@ -86,3 +87,89 @@ input:focus {
 
 .error { color: #b91c1c; }
 .success { color: #166534; }
+
+/* ===== Live validation hints ===== */
+
+.field-hint {
+  font-size: 0.8rem;
+}
+
+.hint-valid { color: #166534; }
+.hint-invalid { color: #b91c1c; }
+
+/* ===== Password strength ===== */
+
+.strength-meter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.strength-bar {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.strength-bar span {
+  height: 6px;
+  flex: 1;
+  border-radius: 999px;
+  background: #ddd;
+}
+
+.strength-level-1 span:nth-child(1) { background: #dc2626; }
+.strength-level-2 span:nth-child(1),
+.strength-level-2 span:nth-child(2) { background: #d97706; }
+.strength-level-3 span:nth-child(1),
+.strength-level-3 span:nth-child(2),
+.strength-level-3 span:nth-child(3) { background: #16a34a; }
+
+.strength-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  min-width: 52px;
+}
+
+/* ===== Registered users list ===== */
+
+.title-small {
+  font-size: 1.25rem;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 12px;
+}
+
+.user-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.user-email {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.btn-small {
+  padding: 6px 10px;
+  font-size: 0.85rem;
+}
+
+.btn-danger {
+  background: #dc2626;
+}

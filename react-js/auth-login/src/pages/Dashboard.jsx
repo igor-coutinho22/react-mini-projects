@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { logout, getUserEmail } from "../services/auth";
 import MemoryGame from "../components/MemoryGame";
+import AppNav from "../components/AppNav";
 
 export default function Dashboard() {
     const navigate = useNavigate();
@@ -15,6 +16,8 @@ export default function Dashboard() {
     return (
         <div className="page-container page-container--wide">
             <div className="card">
+                <AppNav />
+
                 <h1 className="page-title">Dashboard</h1>
 
                 <p>

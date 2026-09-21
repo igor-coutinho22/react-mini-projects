@@ -16,7 +16,7 @@ export function createUser({ email, password, name }) {
   if (userExists(email)) {
     return {
       success: false,
-      message: "Este email já está registado."
+      message: "This email is already registered."
     };
   }
 
@@ -31,4 +31,9 @@ export function createUser({ email, password, name }) {
   users.push(newUser);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(users));
   return { success: true };
+}
+
+export function deleteUser(id) {
+  const users = getUsers().filter((u) => u.id !== id);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(users));
 }

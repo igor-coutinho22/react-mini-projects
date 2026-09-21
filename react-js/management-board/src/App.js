@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { FaSun, FaMoon } from "react-icons/fa";
 import Column from "./components/Column";
 import TaskModal from "./components/TaskModal";
 import { loadBoard, saveBoard } from "./services/boardStorage";
@@ -73,6 +74,7 @@ export default function App() {
         title: taskData.title,
         description: taskData.description || "",
         priority: taskData.priority || "Medium",
+        dueDate: taskData.dueDate || null,
         columnId: "todo",
         createdAt: new Date().toISOString(),
       };
@@ -104,7 +106,9 @@ export default function App() {
   }
 
   function resetBoard() {
-    setBoard(defaultBoard);
+    if (window.confirm("Reset the board? This will delete all tasks and restore the default board.")) {
+      setBoard(defaultBoard);
+    }
   }
 
   return (
@@ -116,16 +120,23 @@ export default function App() {
         </div>
 
         <div className="header-actions">
-          <button className="btn btn-ghost" onClick={toggleTheme} type="button">
-            {theme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode"}
-          </button>
-
           <button className="btn btn-primary" onClick={openCreate} type="button">
             + New Task
           </button>
 
           <button className="btn btn-ghost" onClick={resetBoard} type="button">
             Reset
+          </button>
+
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            type="button"
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            <FaSun className="theme-toggle-icon sun" />
+            <FaMoon className="theme-toggle-icon moon" />
+            <span className="theme-toggle-thumb" />
           </button>
         </div>
       </header>
