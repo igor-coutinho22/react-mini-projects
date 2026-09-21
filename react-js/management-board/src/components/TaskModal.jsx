@@ -54,7 +54,7 @@ export default function TaskModal({ isOpen, initialTask, onClose, onSave }) {
             className="input"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="ex: Implementar drag & drop"
+            placeholder="ex: Implement drag & drop"
           />
 
           <label className="label">Description</label>

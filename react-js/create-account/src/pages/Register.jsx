@@ -100,7 +100,7 @@ export default function Register() {
               type="email"
               value={email}
               onChange={handleFieldChange(setEmail)}
-              placeholder="ex: igor@exemplo.com"
+              placeholder="ex: igor@example.com"
               required
             />
             {emailValid !== null && (

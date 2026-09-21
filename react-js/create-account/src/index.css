@@ -1,8 +1,8 @@
-/* ===== Reset básico ===== */
+/* ===== Basic reset ===== */
 
 * { box-sizing: border-box; }
 
-/* ===== Estilos da aplicação ===== */
+/* ===== App styles ===== */
 
 body {
   margin: 0;
@@ -11,7 +11,7 @@ body {
   color: #222;
 }
 
-/* ===== Layout da página ===== */
+/* ===== Page layout ===== */
 
 .page {
   min-height: 100vh;
@@ -30,7 +30,7 @@ body {
   padding: 24px;
 }
 
-/* ===== Tipografia ===== */
+/* ===== Typography ===== */
 
 .title {
   margin: 0 0 12px 0;
@@ -45,7 +45,7 @@ body {
   line-height: 1.4;
 }
 
-/* ===== Formulário ===== */
+/* ===== Form ===== */
 
 .field {
   display: grid;
@@ -67,7 +67,7 @@ input:focus {
   border-color: #3b82f6;
 }
 
-/* ===== Botões ===== */
+/* ===== Buttons ===== */
 
 .btn {
   padding: 10px 14px;
@@ -81,7 +81,7 @@ input:focus {
 
 .btn:hover { opacity: 0.95; }
 
-/* ===== Mensagens ===== */
+/* ===== Messages ===== */
 
 .msg { margin: 14px 0 0 0; }
 
