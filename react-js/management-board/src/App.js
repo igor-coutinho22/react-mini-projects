@@ -72,7 +72,7 @@ export default function App() {
         id: makeId(),
         title: taskData.title,
         description: taskData.description || "",
-        priority: taskData.priority || "Média",
+        priority: taskData.priority || "Medium",
         columnId: "todo",
         createdAt: new Date().toISOString(),
       };
@@ -112,7 +112,7 @@ export default function App() {
       <header className="header">
         <div>
           <h1 className="title">Management Board</h1>
-          <p className="subtitle">Mini projeto SCRUM com React.</p>
+          <p className="subtitle">SCRUM mini project with React.</p>
         </div>
 
         <div className="header-actions">
@@ -121,7 +121,7 @@ export default function App() {
           </button>
 
           <button className="btn btn-primary" onClick={openCreate} type="button">
-            + Nova tarefa
+            + New Task
           </button>
 
           <button className="btn btn-ghost" onClick={resetBoard} type="button">

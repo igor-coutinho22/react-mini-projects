@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export default function TaskModal({ isOpen, initialTask, onClose, onSave }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [priority, setPriority] = useState("Média");
+  const [priority, setPriority] = useState("Medium");
   const [error, setError] = useState("");
 
   // re-sync form fields each time the modal opens, so stale values from a previous edit don't leak in
@@ -12,7 +12,7 @@ export default function TaskModal({ isOpen, initialTask, onClose, onSave }) {
 
     setTitle(initialTask?.title || "");
     setDescription(initialTask?.description || "");
-    setPriority(initialTask?.priority || "Média");
+    setPriority(initialTask?.priority || "Medium");
     setError("");
   }, [isOpen, initialTask]);
 
@@ -23,7 +23,7 @@ export default function TaskModal({ isOpen, initialTask, onClose, onSave }) {
     setError("");
 
     if (!title.trim()) {
-      setError("O título é obrigatório.");
+      setError("A title is required.");
       return;
     }
 
@@ -39,14 +39,14 @@ export default function TaskModal({ isOpen, initialTask, onClose, onSave }) {
     <div className="modal-backdrop" onMouseDown={onClose}>
       <div className="modal" onMouseDown={(e) => e.stopPropagation()}>
         <div className="modal-header">
-          <h2>{initialTask ? "Editar tarefa" : "Nova tarefa"}</h2>
+          <h2>{initialTask ? "Edit Task" : "New Task"}</h2>
           <button className="btn btn-ghost" onClick={onClose} type="button">
             ✕
           </button>
         </div>
 
         <form onSubmit={handleSubmit} className="modal-body">
-          <label className="label">Título</label>
+          <label className="label">Title</label>
           <input
             className="input"
             value={title}
@@ -54,33 +54,33 @@ export default function TaskModal({ isOpen, initialTask, onClose, onSave }) {
             placeholder="ex: Implementar drag & drop"
           />
 
-          <label className="label">Descrição</label>
+          <label className="label">Description</label>
           <textarea
             className="input textarea"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            placeholder="Detalhes da tarefa..."
+            placeholder="Task details..."
           />
 
-          <label className="label">Prioridade</label>
+          <label className="label">Priority</label>
           <select
             className="input"
             value={priority}
             onChange={(e) => setPriority(e.target.value)}
           >
-            <option>Baixa</option>
-            <option>Média</option>
-            <option>Alta</option>
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
           </select>
 
           {error && <p className="error">{error}</p>}
 
           <div className="modal-actions">
             <button className="btn btn-ghost" onClick={onClose} type="button">
-              Cancelar
+              Cancel
             </button>
             <button className="btn btn-primary" type="submit">
-              Guardar
+              Save
             </button>
           </div>
         </form>

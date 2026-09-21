@@ -1,113 +1,175 @@
-/* ===== Reset de estilos ===== */
+/* ===== Reset ===== */
 
 * {
   box-sizing: border-box;
 }
 
-/* ===== Estilos globais ===== */
+/* ===== Design tokens ===== */
+
+:root {
+  --bg: #f3f4f6;
+  --card-bg: #ffffff;
+  --border: #e5e7eb;
+  --text: #1f2937;
+  --text-muted: #6b7280;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --danger: #dc2626;
+  --success-bg: #ecfdf5;
+  --success-border: #a7f3d0;
+  --radius: 12px;
+}
+
+/* ===== Global ===== */
 
 body {
   margin: 0;
-  padding: 18px;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #c3b17c;
-  color: #222;
+  padding: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
-/* ===== Layout geral ===== */
+/* ===== Layout ===== */
 
 .page-container {
-  max-width:  1200px;
+  max-width: 480px;
   width: 100%;
-  margin: 60px auto;
+  margin: 48px auto;
   padding: 0 16px;
-  background-color: #d5b143;
+}
+
+.page-container--wide {
+  max-width: 880px;
 }
 
 .card {
-  background-color: #e5d8b1;
-  border: 1px solid #e5d8b1;
-  border-radius: 8px;
-  padding: 24px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
   margin-bottom: 24px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
-/* ===== Títulos ===== */
+/* ===== Titles ===== */
 
 .page-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 3px solid #000000;
+  margin: 0 0 8px;
 }
 
-/* ===== Formulários ===== */
+.card > p {
+  color: var(--text-muted);
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+
+/* ===== Forms ===== */
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 label {
-  font-weight: bold;
+  display: block;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 6px;
 }
 
 input {
   width: 100%;
-  padding: 10px;
-  margin-top: 6px;
-  font-size: 1rem;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  color: var(--text);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
 button {
-  padding: 10px 16px;
-  font-size: 1rem;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
   cursor: pointer;
-  background-color: #c3b17c;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: #ffffff;
+  transition: background-color 0.15s ease;
 }
 
 button:hover {
-  opacity: 0.9;
+  background-color: var(--primary-hover);
 }
 
-/* ===== Jogo da memória ===== */
+.form-error {
+  color: var(--danger);
+  font-size: 0.875rem;
+  margin: 12px 0 0;
+}
+
+/* ===== Memory game ===== */
 
 .memory-header {
   display: flex;
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.memory-header button {
+  margin-left: auto;
 }
 
 .memory-grid {
   display: grid;
-  grid-template-columns: repeat(4, 80px);
-  gap: 12px;
-  margin-top: 16px;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
 }
 
 .memory-card {
-  width: 80px;
-  height: 80px;
-  border: 2px solid #444;
-  border-radius: 6px;
-  font-size: 2rem;
-  background-color: #c3b17c;
+  aspect-ratio: 1;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 2.5rem;
+  background-color: var(--bg);
+  color: var(--text);
   cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
 }
 
-.memory-card:hover {
-  background-color: #eaeaea;
+.memory-card:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  background-color: var(--card-bg);
+}
+
+.memory-card:disabled {
+  cursor: default;
 }
 
 .memory-finish {
   margin-top: 18px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 12px;
   flex-wrap: wrap;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #c3b17c;
-  background: #c3b17c;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--success-border);
+  background: var(--success-bg);
 }

@@ -7,9 +7,9 @@ export const defaultBoard = {
   tasks: [
     {
       id: "t1",
-      title: "Criar layout da board",
-      description: "Definir colunas e cards.",
-      priority: "Média",
+      title: "Create a board layout",
+      description: "Define columns and cards.",
+      priority: "Medium",
       columnId: "todo",
       createdAt: new Date().toISOString(),
     },

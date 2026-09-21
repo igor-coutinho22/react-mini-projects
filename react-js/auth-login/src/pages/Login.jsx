@@ -21,7 +21,7 @@ export default function Login() {
 
         const ok = login(email, password);
         if (!ok) {
-            setError("Preenche email e password.");
+            setError("Please fill in email and password.");
             return;
         }
 
@@ -33,12 +33,11 @@ export default function Login() {
             <div className="card">
                 <h1 className="page-title">Login</h1>
 
-                <p>Bem-vindo! Introduz as tuas credenciais para entrares.</p>
+                <p>Welcome! Please enter your credentials to log in.</p>
 
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label>Email</label>
-                        <br />
                         <input
                             type="email"
                             value={email}
@@ -48,10 +47,8 @@ export default function Login() {
                         />
                     </div>
 
-                    <br />
                     <div className="form-group">
                         <label>Password</label>
-                        <br />
                         <input
                             type="password"
                             value={password}
@@ -59,11 +56,10 @@ export default function Login() {
                             required
                         />
                     </div>
-                    <br />
 
-                    <button type="submit">Entrar</button>
+                    <button type="submit">Enter</button>
 
-                    {error && <p style={{ color: "red" }}>{error}</p>}
+                    {error && <p className="form-error">{error}</p>}
                 </form>
             </div>
         </div>

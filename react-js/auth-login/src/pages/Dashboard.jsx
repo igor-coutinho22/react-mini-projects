@@ -13,13 +13,13 @@ export default function Dashboard() {
     }
 
     return (
-        <div className="page-container">
+        <div className="page-container page-container--wide">
             <div className="card">
                 <h1 className="page-title">Dashboard</h1>
 
                 <p>
-                    Bem-vindo{email ? `, ${email}` : ""}! <br />
-                    Já que estás aqui, experimenta o mini jogo da memória abaixo.
+                    Welcome{email ? `, ${email}` : ""}! <br />
+                    Since you're here, try the mini memory game.
                 </p>
 
                 <button onClick={handleLogout}>Logout</button>

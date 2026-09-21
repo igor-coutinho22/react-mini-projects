@@ -14,6 +14,7 @@ A simple React authentication app with protected routes, built to practice sessi
 ## Tech stack
 - React
 - react-router-dom
+- react-icons
 - Web Storage API (`localStorage`)
 
 ## Getting started

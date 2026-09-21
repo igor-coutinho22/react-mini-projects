@@ -117,7 +117,7 @@ body {
   color: var(--text-main);
 }
 
-/* (opcional) transição suave ao alternar tema */
+/* smooth transition when switching theme */
 body, .column, .task-card, .modal, .btn, input, textarea, select {
   transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
 }
@@ -203,12 +203,12 @@ body, .column, .task-card, .modal, .btn, input, textarea, select {
   background: var(--pill-bg);
 }
 
-/* prioridades */
-.pill-baixa { border-color: var(--pill-low-border); background: var(--pill-low-bg); }
-.pill-média { border-color: var(--pill-med-border); background: var(--pill-med-bg); }
-.pill-alta { border-color: var(--pill-high-border); background: var(--pill-high-bg); }
+/* priorities */
+.pill-low { border-color: var(--pill-low-border); background: var(--pill-low-bg); }
+.pill-medium { border-color: var(--pill-med-border); background: var(--pill-med-bg); }
+.pill-high { border-color: var(--pill-high-border); background: var(--pill-high-bg); }
 
-/* Botões */
+/* Buttons */
 .btn {
   border: 1px solid var(--btn-border);
   background: var(--btn-bg);

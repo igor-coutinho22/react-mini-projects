@@ -1,6 +1,16 @@
 import { useMemo, useState } from "react";
+import {
+  FaAppleAlt,
+  FaRocket,
+  FaHeadphones,
+  FaFutbol,
+  FaDog,
+  FaMoon,
+  FaPizzaSlice,
+  FaDice,
+} from "react-icons/fa";
 
-const SYMBOLS = ["🍎", "🚀", "🎧", "⚽", "🐶", "🌙", "🍕", "🎲"];
+const SYMBOLS = [FaAppleAlt, FaRocket, FaHeadphones, FaFutbol, FaDog, FaMoon, FaPizzaSlice, FaDice];
 
 // Fisher-Yates shuffle
 function shuffle(array) {
@@ -13,9 +23,9 @@ function shuffle(array) {
 }
 
 function makeDeck() {
-  const pairs = [...SYMBOLS, ...SYMBOLS].map((value, idx) => ({
-    id: idx + "-" + value,
-    value,
+  const pairs = [...SYMBOLS, ...SYMBOLS].map((Icon, idx) => ({
+    id: `${idx}-${Icon.displayName || Icon.name}`,
+    Icon,
     matched: false,
   }));
   return shuffle(pairs);
@@ -52,7 +62,7 @@ export default function MemoryGame() {
       const c1 = cards[a];
       const c2 = cards[b];
 
-      if (c1.value === c2.value) {
+      if (c1.Icon === c2.Icon) {
         // brief delay so the player sees both cards before they lock in as matched
         setTimeout(() => {
           setCards((prev) =>
@@ -72,15 +82,16 @@ export default function MemoryGame() {
   return (
     <div>
       <div className="memory-header">
-        <strong>Jogo da Memória</strong> - <span>Movimentos: {moves}</span>
+        <strong>Memory Game</strong> - <span>Moves: {moves}</span>
         <button onClick={resetGame} type="button">
-          Reiniciar
+          Reset
         </button>
       </div>
 
       <div className="memory-grid">
         {cards.map((card, idx) => {
           const isUp = card.matched || flipped.includes(idx);
+          const Icon = card.Icon;
           return (
             <button
               key={card.id}
@@ -90,7 +101,7 @@ export default function MemoryGame() {
               disabled={finished}
               style={{ opacity: finished ? 0.95 : 1 }}
             >
-              {isUp ? card.value : "?"}
+              {isUp ? <Icon /> : "?"}
             </button>
           );
         })}
@@ -98,9 +109,9 @@ export default function MemoryGame() {
 
       {finished && (
         <div className="memory-finish">
-          <strong>🎉 Parabéns! Completaste o jogo.</strong>
+          <strong> Congratulations! You've completed the game.</strong>
           <button onClick={resetGame} type="button">
-            Jogar novamente
+            Play Again!
           </button>
         </div>
       )}

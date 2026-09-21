@@ -16,12 +16,12 @@ export default function Register() {
     setSuccess("");
 
     if (password.length < 6) {
-      setError("A password deve ter pelo menos 6 caracteres.");
+      setError("The password must be at least 6 characters long.");
       return;
     }
 
     if (password !== confirm) {
-      setError("As passwords não coincidem.");
+      setError("The passwords do not match.");
       return;
     }
 
@@ -32,7 +32,7 @@ export default function Register() {
       return;
     }
 
-    setSuccess("Conta criada com sucesso! ✅");
+    setSuccess("Account created successfully!");
     setName("");
     setEmail("");
     setPassword("");
@@ -42,15 +42,15 @@ export default function Register() {
   return (
     <div className="page">
       <div className="card">
-        <h1 className="title">Criação de Conta</h1>
+        <h1 className="title">Account Creation</h1>
 
         <p className="subtitle">
-          Regista um utilizador.
+          Register a user.
         </p>
 
         <form onSubmit={handleSubmit}>
           <div className="field">
-            <label>Nome</label>
+            <label>Name</label>
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -76,13 +76,13 @@ export default function Register() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="mínimo 6 caracteres"
+              placeholder="At least 6 characters"
               required
             />
           </div>
 
           <div className="field">
-            <label>Confirmar Password</label>
+            <label>Confirm Password</label>
             <input
               type="password"
               value={confirm}
@@ -92,7 +92,7 @@ export default function Register() {
           </div>
 
           <button className="btn" type="submit">
-            Criar Conta
+            Create Account
           </button>
 
           {error && <p className="msg error">{error}</p>}

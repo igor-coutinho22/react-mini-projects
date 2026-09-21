@@ -22,14 +22,14 @@ export default function TaskCard({ task, onEdit, onDelete, onDragStart }) {
 
       <div className="task-actions">
         <button className="btn btn-small" onClick={() => onEdit(task)} type="button">
-          Editar
+          Edit
         </button>
         <button
           className="btn btn-small btn-danger"
           onClick={() => onDelete(task.id)}
           type="button"
         >
-          Apagar
+          Delete
         </button>
       </div>
     </div>
