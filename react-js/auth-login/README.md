@@ -13,7 +13,7 @@ A simple React authentication app with protected routes, built to practice sessi
 *Fake authentication (no backend) — the goal is to demonstrate protected routes and session handling on the front end.*
 
 ## Live Demo
-[auth-login-igor.netlify.app](https://auth-login-igor.netlify.app/)
+[auth-login-igor](https://auth-login-igor.netlify.app/)
 
 ## Tech stack
 - React
