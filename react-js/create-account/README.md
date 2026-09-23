@@ -12,6 +12,9 @@ A simple, standalone React app for user account creation, with input validation 
 
 *No backend — the goal is to demonstrate user registration logic and validation on the front end.*
 
+## Live Demo
+[create-account-igor.netlify.app](https://create-account-igor.netlify.app/)
+
 ## Tech stack
 - React
 - Web Storage API (`localStorage`)

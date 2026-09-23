@@ -12,6 +12,9 @@ A React task management app inspired by a Kanban/SCRUM board, with drag & drop b
 
 *No backend — the goal is to demonstrate state management, user interaction and data persistence on the front end.*
 
+## Live Demo
+[management-board-igor.netlify.app](https://management-board-igor.netlify.app/)
+
 ## Tech stack
 - React
 - react-icons

@@ -1,4 +1,4 @@
-# Igor's Portfolio
+# Igor's React Mini Projects
 
 A collection of small, independent front-end projects built while learning web development.
 
@@ -17,10 +17,10 @@ A collection of small, independent front-end projects built while learning web d
 
 ### React
 
-| Project | Description |
-|---|---|
-| [auth-login](react-js/auth-login) | Authentication flow with protected routes (login, dashboard, logout) |
-| [create-account](react-js/create-account) | Account creation with validation and a unique-email check |
-| [management-board](react-js/management-board) | Kanban board with drag & drop and a light/dark theme |
+| Project | Live Demo | Description |
+|---|---|---|
+| [auth-login](react-js/auth-login) | [Live Demo](https://auth-login-igor.netlify.app/) | Authentication flow with protected routes (login, dashboard, logout) |
+| [create-account](react-js/create-account) | [Live Demo](https://create-account-igor.netlify.app/) | Account creation with validation and a unique-email check |
+| [management-board](react-js/management-board) | [Live Demo](https://management-board-igor.netlify.app/) | Kanban board with drag & drop and a light/dark theme |
 
 Each project lives in its own folder with its own `README.md`.
